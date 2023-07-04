@@ -21,6 +21,6 @@ jobs:
           docker build -t ghcr.io/${REPO}:${VERSION} . 
           docker push ghcr.io/${REPO}:${VERSION}
           if [ "$VERSION" != "latest" ] ; then
-            docker tag ghcr.io${REPO}:${VERSION} ghcr.io/${REPO}:latest
+            docker tag ghcr.io/${REPO}:${VERSION} ghcr.io/${REPO}:latest
             docker push ghcr.io/${REPO}:latest
           fi
